@@ -1,23 +1,37 @@
-import React from "react";
-import { View, Text, TextInput } from "react-native";
+import React, {useState}from "react";
+import { View, Text, TextInput, Button } from "react-native";
 
 export default function Form(){
+    
+    const[height, setHeight] = useState(null);
+    const[weight, setWeight] = useState(null);
+    const[messageImc, setMessageImc] = useState("Jacaré no seco anda?");
+    const[imc, setImc] = useState(null);
+    const[textButton, setTextButton] = useState("Calcular IMC");
+
+
+
     return(
     <View>
-
+        
         <View>
             <Text>Altura</Text>
             <TextInput 
-            placeholder="Ex.1.75"
-            keyboardType="numeric"/>
+              placeholder="Ex.1.75"
+              keyboardType="numeric"/>
 
             <Text>Peso</Text>
             <TextInput 
-            placeholder="Ex.85.766"
-            keyboardType="numeric"/>
+              placeholder="Ex.85.766"
+              keyboardType="numeric"
+            /> 
 
-        </View>
+            <Button
+            title = {textButton}
+            />
+
+        </View>  
 
     </View>
     );
-}
+};
